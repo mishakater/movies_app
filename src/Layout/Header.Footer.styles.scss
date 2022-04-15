@@ -1,0 +1,43 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  background-color: aquamarine;
+
+  .header-container {
+    padding: 30px 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: 500;
+
+    ul {
+      margin: 0 0;
+    }
+    ul > li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+footer {
+  .footer-container {
+    text-align: center;
+    padding: 40px 0;
+  }
+  width: 100%;
+  background-color: aquamarine;
+}
+
+.main-container {
+  min-height: calc(100vh - 81px - 101px);
+}
