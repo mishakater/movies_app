@@ -11,10 +11,14 @@ export const Main = () => {
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.Search);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
         setLoading(false);
       });
   }, []);
@@ -22,13 +26,17 @@ export const Main = () => {
   const doSearch = (searchData, type) => {
     setLoading(true);
     fetch(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchData}${
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchData}${
         type !== "all" ? `&type=${type}` : " "
       }`
     )
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.Search);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
         setLoading(false);
       });
   };
