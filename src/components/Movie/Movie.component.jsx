@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Movie.styles.scss";
 
-export default function Movie({ Title, Year, Poster }) {
+export default function Movie({ Title, Year, Poster, Type }) {
   return (
     <div
       className='card'
@@ -17,6 +17,9 @@ export default function Movie({ Title, Year, Poster }) {
           <h2>{Title}</h2>
           <p>
             <b>{Year}</b>
+          </p>
+          <p>
+            <b>{Type}</b>
           </p>
         </div>
       </div>
